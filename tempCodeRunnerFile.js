@@ -1,0 +1,1 @@
+let regexHeaders = /(#+)\s(.*)\s*/g;

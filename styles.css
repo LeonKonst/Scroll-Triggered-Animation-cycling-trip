@@ -1,0 +1,241 @@
+:root {
+    --primary-bg: #2290da;
+    --secondary-bg: #ffffff;
+    --heading: #2c3e50;
+    --text-main: #ffffff;
+    --text-secondary: #ffffff;
+    --link: #000000;
+    --link-hover: #ffffff;
+    --maximum-width: 700px;
+}
+
+*{
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+  scroll-padding-top: calc(57vw );  /* Header is fixed so it scrolls 80px + header height to be accurate */
+  scroll-behavior: smooth;
+}
+
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    margin:0 auto;
+    width:100%;
+    z-index: 100;
+}
+
+header ol{
+    list-style: none;
+}
+
+nav{
+    width:100vw;
+}
+
+ol{
+    /* background-color: rgba(80, 80, 80, 0.2); */
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%) ;
+    margin:0 auto;
+    top:calc(55vw - 16vh - 10px);
+    padding: 10px;
+    gap:5px;
+}
+
+
+li{ 
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.4);
+    width:100px;
+    height: 30px;
+    font-size: smaller;
+    text-align: center;
+    align-content: center;
+    padding: 5px;
+}
+
+
+body{
+    background-color: rgb(139, 139, 139);
+}
+
+main, footer{
+    position:relative;
+    top:calc(55vw );
+    
+}
+
+canvas {
+    position: fixed;
+    top:-10px;
+    left:50%;
+    transform: translateX(-50%) ;
+
+    /* aspect-ratio: 16 / 9; */
+    /* width: min(100%, 100vh * 16 / 9); */
+    margin:0 auto;
+    z-index: 1;
+    filter: blur(3px);    
+}
+
+h1{
+    color: var(--text-secondary);
+
+    font-size: large;
+    background-color: rgba(80, 80, 80, 0.2);
+}
+
+h1, h2, h3{
+    text-align: center;
+    margin: 0 auto;
+}
+
+p{
+    color:var(--text-main);
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.5s ease;
+    display: inline-block; 
+}
+
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transform:  scaleX(0); /* translateX(-50%) */
+    width: 100%;
+    height: 2px;
+    background: var(--link-hover);
+    transition: transform 0.2s ease;
+    pointer-events: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+/* @media (max-width: 500px) {
+
+    p{
+        background-color: aqua;
+    }
+} */
+
+
+
+/* 
+body {
+    color: var(--text-main);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, rgb(207, 235, 198) 0%, rgb(255,255,255) 100%);
+}
+
+header {
+    color: var(--text-main);
+    padding: 1rem;
+    text-align: center;
+    margin:0 auto;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(44,62,80,0.08);
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+
+header li{
+    display: inline;
+    margin: 0 1rem;
+    
+}
+
+
+
+h1, h2, h3 {
+    color: var(--heading);
+    width:var(--maximum-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    width:var(--maximum-width);
+    margin: 10px auto;
+    text-align: justify; 
+    border-radius: 10px;
+    padding:5px;
+    
+
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(44,62,80,0.08);
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+
+
+p::first-letter {
+    font-size: 3em;
+    color: var(--heading);
+
+    line-height: 1;
+    padding-right: 0.1em;
+
+}
+
+
+#footerPar::first-letter {
+    font-size: 1em;
+    color: var(--text-secondary);
+}
+
+
+
+
+
+
+
+a:hover {
+    color: var(--link-hover);
+}
+
+@media (max-width: 800px) {
+    .container {
+        max-width: 95vw;
+        padding: 1rem;
+    }
+    p{
+        width: 90vw;
+    }
+}
+*/
+
+
+
+
+
