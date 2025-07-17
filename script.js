@@ -19,14 +19,42 @@ function preloadImages() {
 
 function setCanvasSize() {
   canvas.width = window.innerWidth;
-  canvas.height = window.innerWidth* 9 / 16; // Maintain 16:9 aspect ratio
+  canvas.height = window.innerWidth*9/16   ; // Maintain 16:9 aspect ratio
 }
 
 function render() {
   const img = images[imageIndex];
   if (img && img.complete) {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+    // Calculate the aspect ratio of the image
+    const imgAspectRatio = img.width / img.height;
+    const canvasAspectRatio = canvas.width / canvas.height;
+    
+    let sourceX, sourceY, sourceWidth, sourceHeight;
+    let destX = 0, destY = 0, destWidth = canvas.width, destHeight = canvas.height;
+    
+    if (imgAspectRatio > canvasAspectRatio) {
+      // Image is wider than canvas - crop sides
+      sourceHeight = img.height;
+      sourceWidth = sourceHeight * canvasAspectRatio;
+      sourceX = (img.width - sourceWidth) / 2;
+      sourceY = 0;
+    } else {
+      // Image is taller than canvas - crop bottom
+      sourceWidth = img.width;
+      sourceHeight = sourceWidth / canvasAspectRatio;
+      sourceX = 0;
+      sourceY =  120; // This crops from the top. Change to img.height - sourceHeight to crop from bottom
+    }
+    
+  
+    
+    context.drawImage(
+      img,
+      sourceX, sourceY, sourceWidth, sourceHeight,  // source rectangle (cropped)
+      destX, destY, destWidth, destHeight           // destination rectangle (full canvas)
+    );
   }
 }
 
