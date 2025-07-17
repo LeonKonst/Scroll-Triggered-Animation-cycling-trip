@@ -1,4 +1,4 @@
-const frameCount = 51;
+const frameCount = 51; //amount of frames I got from the cycling video
 const canvas = document.getElementById('animationCanvas');
 const context = canvas.getContext('2d');
 
@@ -41,19 +41,16 @@ function render() {
       sourceX = (img.width - sourceWidth) / 2;
       sourceY = 0;
     } else {
-      // Image is taller than canvas - crop bottom
       sourceWidth = img.width;
       sourceHeight = sourceWidth / canvasAspectRatio;
       sourceX = 0;
-      sourceY =  120; // This crops from the top. Change to img.height - sourceHeight to crop from bottom
+      sourceY =  120; 
     }
-    
-  
-    
+
     context.drawImage(
       img,
-      sourceX, sourceY, sourceWidth, sourceHeight,  // source rectangle (cropped)
-      destX, destY, destWidth, destHeight           // destination rectangle (full canvas)
+      sourceX, sourceY, sourceWidth, sourceHeight,  
+      destX, destY, destWidth, destHeight           
     );
   }
 }
@@ -84,9 +81,6 @@ setCanvasSize();
 preloadImages();
 images[0].onload = render;
 
-
-
-
+//Footer current year generator
 const currentYear = new Date().getFullYear();
-            // Insert the current year into the footer
 document.getElementById('current-year').textContent = currentYear;
