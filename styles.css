@@ -2,6 +2,9 @@
     --text-main: #ffffff;
     --link: #000000;
     --link-hover: #ffffff;
+    --border-color:rgba(255, 255, 255, 0.7);
+    --buttons-color:rgba(255, 255, 255, 0.5);
+    --background-color:rgba(86, 183, 192, 0.727);
 }
 
 *{
@@ -30,17 +33,13 @@ nav{
 }
 
 ol{
-
     width:100%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
     position: absolute;
     left:50%;
-    transform: translateX(-50%) ;
-    margin:0 auto;
+    transform: translateX(-50%);
     top:calc(55vw - 16vh - 40px);
     padding: 10px;
     gap:5px;
@@ -48,8 +47,8 @@ ol{
 
 
 li{ 
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--border-color) ;
+    background-color: var(--buttons-color);
     width:100px;
     height: 30px;
     font-size: smaller;
@@ -60,33 +59,29 @@ li{
 
 
 body{
-    background-color: rgb(139, 139, 139);
+    background-color: var(--background-color);
 }
 
 main, footer{
     position:relative;
-    top:calc(49vw );
+    top:calc(49vw);
     
 }
 
 canvas {
     position: fixed;
-    top:-10px;
+    top:-12px;
     left:50%;
     transform: translateX(-50%) ;
-
-    /* aspect-ratio: 16 / 9; */
-    /* width: min(100%, 100vh * 16 / 9); */
-    margin:0 auto;
     z-index: 1;
-    filter: blur(3px);    
+    filter: blur(2px);    
 }
 
 h1{
     color: var(--text-main);
 
     font-size: large;
-    background-color: rgba(80, 80, 80, 0.2);
+    -webkit-text-stroke: 1px var(--link);
 }
 
 h1, h2, h3{
@@ -96,6 +91,7 @@ h1, h2, h3{
 
 p{
     color:var(--text-main);
+    text-align: justify;
 }
 
 a {
@@ -112,11 +108,11 @@ a::after {
     position: absolute;
     left: 0;
     bottom: -2px;
-    transform:  scaleX(0); /* translateX(-50%) */
+    transform:  scaleX(0);
     width: 100%;
     height: 2px;
     background: var(--link-hover);
-    transition: transform 0.2s ease;
+    transition: transform 0.4s ease;
     pointer-events: none;
 }
 
