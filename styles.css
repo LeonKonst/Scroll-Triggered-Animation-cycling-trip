@@ -14,6 +14,7 @@
 html {
   scroll-padding-top: calc(49vw); /* Adjust for fixed header height */
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 header{
@@ -40,7 +41,7 @@ ol{
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    top:calc(55vw - 16vh - 40px);
+    top:calc(55vw - 16vh - 50px);
     padding: 10px;
     gap:5px;
 }
@@ -60,6 +61,8 @@ li{
 
 body{
     background-color: var(--background-color);
+    min-width: 380px;
+    max-width:500px;
 }
 
 main, footer{
@@ -81,7 +84,6 @@ h1{
     color: var(--text-main);
 
     font-size: large;
-    -webkit-text-stroke: 1px var(--link);
 }
 
 h1, h2, h3{
@@ -92,6 +94,7 @@ h1, h2, h3{
 p{
     color:var(--text-main);
     text-align: justify;
+    padding:5px;
 }
 
 a {
@@ -122,4 +125,42 @@ a:hover {
 
 a:hover::after {
     transform: scaleX(1);
+}
+
+
+/*responsiveness */
+@media (max-width: 575px) {
+  
+}
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    main{
+    background-color:gray;
+  }
+    
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  main{
+    background-color:lightslategray;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  main{
+    background-color:lightgray;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* Your CSS rules here */
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Your CSS rules here */
 }
