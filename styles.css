@@ -1,10 +1,10 @@
 :root {
-    --text-main: #ffffff;
-    --link: #000000;
+    --text-main: #18383d;
+    --link: #ffffff;
     --link-hover: #ffffff;
     --border-color:rgba(255, 255, 255, 0.7);
     --buttons-color:rgba(255, 255, 255, 0.5);
-    --background-color:rgba(86, 183, 192, 0.727);
+    --background-color:#e6dbc2;
 }
 
 *{
@@ -83,7 +83,7 @@ canvas {
 }
 
 h1{
-    color: var(--text-main);
+    color: var(--border-color); 
 
     font-size: large;
 }
