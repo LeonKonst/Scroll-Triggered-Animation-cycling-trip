@@ -10,7 +10,7 @@
 }
 
 html {
-  scroll-padding-top: calc(49vw); /* Adjust for fixed header height */
+  scroll-padding-top: calc(min(49vw,250px)); /* Adjust for fixed header height */
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
