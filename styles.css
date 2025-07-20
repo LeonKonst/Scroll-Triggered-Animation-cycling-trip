@@ -1,9 +1,7 @@
 :root {
     --text-main: #18383d;
-    --link: #ffffff;
-    --link-hover: #ffffff;
-    --border-color:rgba(255, 255, 255, 0.7);
-    --buttons-color:rgba(255, 255, 255, 0.5);
+    --link: #36013F;
+    --link-hover: #35692a;
     --background-color:#e6dbc2;
 }
 
@@ -29,47 +27,18 @@ header ol{
     list-style: none;
 }
 
-nav{
-    width:100%;
-}
-
-ol{
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top:calc(40vw - 16vh);
-    padding: 10px;
-    gap:5px;
-    min-width:360px; 
-}
-
-
-li{ 
-    border: 1px solid var(--border-color) ;
-    background-color: var(--buttons-color);
-    width:27vw;
-    height: 30px;
-    font-size: smaller;
-    text-align: center;
-    align-content: center;
-    padding: 5px;
-    min-width:100px; 
-}
 
 
 body{
     background-color: var(--background-color);
     min-width: 360px;
-    max-width:700px;
+    max-width:500px;
+    margin:0 auto;
 }
 
 main, footer{
     position:relative;
-    top:calc(49vw);
+    top:calc(min(49vw,250px));
     
 }
 
@@ -79,12 +48,13 @@ canvas {
     left:50%;
     transform: translateX(-50%) ;
     z-index: 1;
-    filter: blur(2px);    
+    filter: blur(2px);
+    max-width:500px; 
 }
 
 h1{
-    color: var(--border-color); 
-
+    color: var(--background-color); 
+    text-shadow: 2px 2px 1px var(--link-hover);
     font-size: large;
 }
 
@@ -97,6 +67,7 @@ p{
     color:var(--text-main);
     text-align: justify;
     padding:5px;
+    margin:10px;
 }
 
 a {
@@ -130,41 +101,4 @@ a:hover::after {
 }
 
 
-/*responsiveness */
-@media (max-width: 470px) {
 
-}
-
-@media (min-width: 471px) and (max-width: 650px) {
-
-
-li{ 
-    width:28vw;
-    height: 30px;
-    font-size: medium; 
-}
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 651px) and (max-width: 991px) {
-  main{
-    background-color:lightslategray;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  main{
-    background-color:lightgray;
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-  /* Your CSS rules here */
-}
-
-/* Extra extra large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-  /* Your CSS rules here */
-}
